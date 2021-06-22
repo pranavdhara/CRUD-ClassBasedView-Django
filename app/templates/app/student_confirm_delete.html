@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+{% block title %}delete page{% endblock title %}
+{% block content %}
+    <div class="jumbotron mt-2 pb-4">
+        <h1>{{ object.name }}</h1>
+        <h6>{{ object.city }}</h6>
+        <p>{{ object.age }}</p>
+
+        <form action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure to delete <strong class="text-danger">{{ object }}</strong>  from database?</p>
+    <input type="submit" class="btn btn-danger" value="Confirm">
+</form>
+    </div>
+    <hr>
+
+<a href="{% url 'stu-list' %}" class="btn btn-outline-dark">Go to homepage</a>
+<a href="{% url 'stu-detail' object.id %} " class="btn btn-outline-dark mx-3">Go back</a>
+
+{% endblock content %}

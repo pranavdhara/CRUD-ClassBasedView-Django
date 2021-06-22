@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+
+{% block title %}List Page{% endblock title %}
+
+{% block content %}
+<div class="row justify-content-end ">
+    <a class="btn btn-primary mt-2" href="{% url 'stu-create' %}">Create student</a>
+</div>
+<ul>
+    {% for object in object_list %}
+    <hr>
+        {% comment %} <li>
+           <a href="">{{ object.id }}</a>
+        </li> {% endcomment %}
+        <li>
+            <a href="{% url 'stu-detail' object.id %}" class="text-danger">
+            {{ object.name }}</a>
+        </li>
+        <li>
+            {{ object.city }}
+        </li>
+        <li>
+           {{ object.age }}
+        </li>
+        
+    {% endfor %}
+</ul>
+{% endblock content %}

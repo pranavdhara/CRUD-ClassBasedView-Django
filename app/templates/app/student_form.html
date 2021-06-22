@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Create Page{% endblock title %}
+
+{% block content %}
+    <div class="justify-content-center  mt-2">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" class="btn btn-success" >
+        </form>
+        
+    </div>
+
+
+<a href="{% url 'stu-list' %}" class="btn btn-outline-primary mt-2">Go to homepage</a>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% block title %}Detail Page{% endblock title %}
+{% block content %}
+
+    <div class="jumbotron mt-4 pb-4" >
+        <h1>Name: {{ object.name }}</h1>
+        <h3>City: {{ object.city }}</h3>
+        <p>Age: {{ object.age }}</p>
+        <a href="{% url 'stu-update' object.id %}" class="btn btn-outline-warning mt-3">Edit student</a>
+        <a href="{% url 'stu-delete' object.id %}" class="btn btn-outline-danger mx-3 mt-3">Delete</a>
+    </div>
+
+
+<hr>
+<a href="{% url 'stu-list' %}" class="btn btn-outline-dark">Go back</a>
+<br>
+{% endblock content %}
